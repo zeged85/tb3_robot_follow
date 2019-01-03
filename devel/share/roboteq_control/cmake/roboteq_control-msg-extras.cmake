@@ -1,0 +1,2 @@
+set(roboteq_control_MESSAGE_FILES "/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/roboteq_control/msg/ControlStatus.msg;/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/roboteq_control/msg/MotorStatus.msg;/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/roboteq_control/msg/Peripheral.msg")
+set(roboteq_control_SERVICE_FILES "/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/roboteq_control/srv/Service.srv")

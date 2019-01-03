@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/devel
+
+Name: kinect2_registration
+Description: Description of kinect2_registration
+Version: 0.0.1
+Cflags: -I/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/iai_kinect2/kinect2_registration/include
+Libs: -L/home/zeged/catkin_ws/devel/lib -lkinect2_registration
+Requires: 

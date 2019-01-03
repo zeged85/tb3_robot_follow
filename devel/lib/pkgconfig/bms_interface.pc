@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/devel
+
+Name: bms_interface
+Description: Description of bms_interface
+Version: 1.0.0
+Cflags: -I/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/bms_interface/include
+Libs: -L/home/zeged/catkin_ws/devel/lib -lbms_interface
+Requires: roscpp std_msgs

@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/roboteq_control_gencfg"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqControllerConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqControllerConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqControllerConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqControllerConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqControllerConfig.wikidoc"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqParameterConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqParameterConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqParameterConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqParameterConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqParameterConfig.wikidoc"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqEncoderConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqEncoderConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqEncoderConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqEncoderConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqEncoderConfig.wikidoc"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqPIDtypeConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPIDtypeConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPIDtypeConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqPIDtypeConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPIDtypeConfig.wikidoc"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqPIDConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPIDConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPIDConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqPIDConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPIDConfig.wikidoc"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqAnalogInputConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqAnalogInputConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqAnalogInputConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqAnalogInputConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqAnalogInputConfig.wikidoc"
+  "/home/zeged/catkin_ws/devel/include/roboteq_control/RoboteqPulseInputConfig.h"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPulseInputConfig.dox"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPulseInputConfig-usage.dox"
+  "/home/zeged/catkin_ws/devel/lib/python2.7/dist-packages/roboteq_control/cfg/RoboteqPulseInputConfig.py"
+  "/home/zeged/catkin_ws/devel/share/roboteq_control/docs/RoboteqPulseInputConfig.wikidoc"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/roboteq_control_gencfg.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

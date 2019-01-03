@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/devel
+
+Name: filters
+Description: Description of filters
+Version: 0.0.0
+Cflags: -I/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/filters/include
+Libs: -L/home/zeged/catkin_ws/devel/lib -lfilters
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/install
+
+Name: dxl_interface
+Description: Description of dxl_interface
+Version: 0.0.0
+Cflags: -I/home/zeged/catkin_ws/install/include
+Libs: -L/home/zeged/catkin_ws/install/lib -ldxl_interface
+Requires: dynamixel_sdk

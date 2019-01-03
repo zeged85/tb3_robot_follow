@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/devel
+
+Name: armadillo2_hw
+Description: Description of armadillo2_hw
+Version: 0.0.0
+Cflags: -I/home/zeged/catkin_ws/src/armadillo2/armadillo2_hw/include
+Libs: -L/home/zeged/catkin_ws/devel/lib -larmadillo2_hw
+Requires: bms_interface dxl_interface roboteq_control filters

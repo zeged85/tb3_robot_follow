@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/install
+
+Name: armadillo2_moveit_config
+Description: Description of armadillo2_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/zeged/catkin_ws/install/lib 
+Requires: 

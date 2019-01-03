@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/filters/filters_node.cpp
+iostream
+-
+include/filters/low_pass_filter.h
+/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/filters/include/filters/low_pass_filter.h
+
+/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/filters/include/filters/low_pass_filter.h
+cmath
+-
+
+/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/filters/src/low_pass_filter.cpp
+../include/filters/low_pass_filter.h
+/home/zeged/catkin_ws/src/armadillo2/armadillo2_utils/filters/include/filters/low_pass_filter.h
+

@@ -1,0 +1,8 @@
+prefix=/home/zeged/catkin_ws/devel
+
+Name: follow-me
+Description: Description of follow-me
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/zeged/catkin_ws/devel/lib 
+Requires: 
