@@ -84,7 +84,7 @@ while (True):
 	linear = 0
 	angular = 0
 	if (left > 2 and right > 2):
-		if (mid>1.5 and mid < 5gg):
+		if (mid>1.5 and mid < 5):
 			linear=5
 		elif (mid<1 and mid > 0.5):
 			linear=-5

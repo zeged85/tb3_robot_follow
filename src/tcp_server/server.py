@@ -12,6 +12,8 @@ import subprocess
 address = subprocess.check_output(['hostname', '-s', '-I'])
 address = address.decode('utf-8') 
 address=address[:-1]
+address=address.split(' ')[0]
+print 'address:', address
 
 
 
@@ -23,7 +25,7 @@ rospy.init_node('my_node_name1')
 
 msg = Twist()
 
-pub_ = rospy.Publisher('/robot1/mobile_base_controller/cmd_vel', Twist, queue_size=50)
+pub_ = rospy.Publisher('/tb3_1/mobile_base_controller/cmd_vel', Twist, queue_size=50)
 #rospy.loginfo("Classifiers output: %s in unknown" % data.data)
 rospy.sleep(2.)
 
