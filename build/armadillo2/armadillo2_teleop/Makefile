@@ -56,6 +56,16 @@ CMAKE_BINARY_DIR = /home/zeged/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -100,27 +110,6 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -132,6 +121,17 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,81 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-
-# Convenience name for target.
-moveit_ros_manipulation_gencfg: armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
-
-.PHONY : moveit_ros_manipulation_gencfg
-
-# fast build rule for target.
-moveit_ros_manipulation_gencfg/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
-.PHONY : moveit_ros_manipulation_gencfg/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_nodejs: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-octomap_msgs_generate_messages_nodejs/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
-.PHONY : octomap_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_eus
-
-# fast build rule for target.
-octomap_msgs_generate_messages_eus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
-.PHONY : octomap_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_eus
-
-# fast build rule for target.
-visualization_msgs_generate_messages_eus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
-.PHONY : visualization_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_cpp: armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_cpp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_cpp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
-.PHONY : visualization_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
 .PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
@@ -256,34 +181,79 @@ moveit_msgs_generate_messages_nodejs/fast:
 .PHONY : moveit_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-visualization_msgs_generate_messages_nodejs: armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+shape_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
 
-.PHONY : visualization_msgs_generate_messages_nodejs
+.PHONY : shape_msgs_generate_messages_py
 
 # fast build rule for target.
-visualization_msgs_generate_messages_nodejs/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
-.PHONY : visualization_msgs_generate_messages_nodejs/fast
+shape_msgs_generate_messages_py/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/build
+.PHONY : shape_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
+armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-shape_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
+moveit_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
 
-.PHONY : shape_msgs_generate_messages_lisp
+.PHONY : moveit_msgs_generate_messages_eus
 
 # fast build rule for target.
-shape_msgs_generate_messages_lisp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/build
-.PHONY : shape_msgs_generate_messages_lisp/fast
+moveit_msgs_generate_messages_eus/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build
+.PHONY : moveit_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+object_recognition_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+
+.PHONY : object_recognition_msgs_generate_messages_eus
+
+# fast build rule for target.
+object_recognition_msgs_generate_messages_eus/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build
+.PHONY : object_recognition_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_cpp: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_cpp
+
+# fast build rule for target.
+moveit_msgs_generate_messages_cpp/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/build
+.PHONY : moveit_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+object_recognition_msgs_generate_messages_cpp: armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : object_recognition_msgs_generate_messages_cpp
+
+# fast build rule for target.
+object_recognition_msgs_generate_messages_cpp/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/build
+.PHONY : object_recognition_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_planning_gencfg.dir/rule:
@@ -391,169 +361,34 @@ shape_msgs_generate_messages_eus/fast:
 .PHONY : shape_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-shape_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+octomap_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
 
-.PHONY : shape_msgs_generate_messages_py
+.PHONY : octomap_msgs_generate_messages_eus
 
 # fast build rule for target.
-shape_msgs_generate_messages_py/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_py.dir/build
-.PHONY : shape_msgs_generate_messages_py/fast
+octomap_msgs_generate_messages_eus/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
+.PHONY : octomap_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-visualization_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+shape_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : visualization_msgs_generate_messages_py
+.PHONY : shape_msgs_generate_messages_lisp
 
 # fast build rule for target.
-visualization_msgs_generate_messages_py/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
-.PHONY : visualization_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_lisp
-
-# fast build rule for target.
-octomap_msgs_generate_messages_lisp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build
-.PHONY : octomap_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-moveit_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
-
-.PHONY : moveit_msgs_generate_messages_py
-
-# fast build rule for target.
-moveit_msgs_generate_messages_py/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/build
-.PHONY : moveit_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-moveit_msgs_generate_messages_cpp: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : moveit_msgs_generate_messages_cpp
-
-# fast build rule for target.
-moveit_msgs_generate_messages_cpp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/build
-.PHONY : moveit_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-object_recognition_msgs_generate_messages_cpp: armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : object_recognition_msgs_generate_messages_cpp
-
-# fast build rule for target.
-object_recognition_msgs_generate_messages_cpp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/build
-.PHONY : object_recognition_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-moveit_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
-
-.PHONY : moveit_msgs_generate_messages_eus
-
-# fast build rule for target.
-moveit_msgs_generate_messages_eus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build
-.PHONY : moveit_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-object_recognition_msgs_generate_messages_eus: armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
-
-.PHONY : object_recognition_msgs_generate_messages_eus
-
-# fast build rule for target.
-object_recognition_msgs_generate_messages_eus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build
-.PHONY : object_recognition_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_py
-
-# fast build rule for target.
-octomap_msgs_generate_messages_py/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/build
-.PHONY : octomap_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
-.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-moveit_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : moveit_msgs_generate_messages_lisp
-
-# fast build rule for target.
-moveit_msgs_generate_messages_lisp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build
-.PHONY : moveit_msgs_generate_messages_lisp/fast
+shape_msgs_generate_messages_lisp/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/shape_msgs_generate_messages_lisp.dir/build
+.PHONY : shape_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule:
@@ -584,6 +419,96 @@ object_recognition_msgs_generate_messages_nodejs: armadillo2/armadillo2_teleop/C
 object_recognition_msgs_generate_messages_nodejs/fast:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build
 .PHONY : object_recognition_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_py
+
+# fast build rule for target.
+moveit_msgs_generate_messages_py/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_py.dir/build
+.PHONY : moveit_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_lisp
+
+# fast build rule for target.
+octomap_msgs_generate_messages_lisp/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build
+.PHONY : octomap_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_lisp: armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_lisp
+
+# fast build rule for target.
+moveit_msgs_generate_messages_lisp/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build
+.PHONY : moveit_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_py: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_py
+
+# fast build rule for target.
+octomap_msgs_generate_messages_py/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_py.dir/build
+.PHONY : octomap_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_nodejs: armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+octomap_msgs_generate_messages_nodejs/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
+.PHONY : octomap_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+.PHONY : armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+
+# Convenience name for target.
+moveit_ros_manipulation_gencfg: armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+
+.PHONY : moveit_ros_manipulation_gencfg
+
+# fast build rule for target.
+moveit_ros_manipulation_gencfg/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make armadillo2/armadillo2_teleop/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
+.PHONY : moveit_ros_manipulation_gencfg/fast
 
 src/armadillo2_teleop_node.o: src/armadillo2_teleop_node.cpp.o
 
@@ -645,20 +570,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
-	@echo "... moveit_ros_manipulation_gencfg"
-	@echo "... test"
-	@echo "... octomap_msgs_generate_messages_nodejs"
-	@echo "... octomap_msgs_generate_messages_eus"
-	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... moveit_msgs_generate_messages_nodejs"
-	@echo "... list_install_components"
-	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... shape_msgs_generate_messages_lisp"
+	@echo "... shape_msgs_generate_messages_py"
+	@echo "... moveit_msgs_generate_messages_eus"
+	@echo "... object_recognition_msgs_generate_messages_eus"
+	@echo "... moveit_msgs_generate_messages_cpp"
+	@echo "... object_recognition_msgs_generate_messages_cpp"
 	@echo "... moveit_ros_planning_gencfg"
 	@echo "... armadillo2_teleop_node"
 	@echo "... octomap_msgs_generate_messages_cpp"
@@ -666,20 +588,18 @@ help:
 	@echo "... shape_msgs_generate_messages_nodejs"
 	@echo "... object_recognition_msgs_generate_messages_py"
 	@echo "... shape_msgs_generate_messages_eus"
-	@echo "... shape_msgs_generate_messages_py"
-	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... install"
-	@echo "... octomap_msgs_generate_messages_lisp"
-	@echo "... moveit_msgs_generate_messages_py"
-	@echo "... moveit_msgs_generate_messages_cpp"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... object_recognition_msgs_generate_messages_cpp"
-	@echo "... moveit_msgs_generate_messages_eus"
-	@echo "... object_recognition_msgs_generate_messages_eus"
-	@echo "... octomap_msgs_generate_messages_py"
-	@echo "... moveit_msgs_generate_messages_lisp"
+	@echo "... octomap_msgs_generate_messages_eus"
+	@echo "... shape_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_nodejs"
+	@echo "... install"
+	@echo "... moveit_msgs_generate_messages_py"
+	@echo "... octomap_msgs_generate_messages_lisp"
+	@echo "... moveit_msgs_generate_messages_lisp"
+	@echo "... octomap_msgs_generate_messages_py"
+	@echo "... test"
+	@echo "... octomap_msgs_generate_messages_nodejs"
+	@echo "... moveit_ros_manipulation_gencfg"
 	@echo "... src/armadillo2_teleop_node.o"
 	@echo "... src/armadillo2_teleop_node.i"
 	@echo "... src/armadillo2_teleop_node.s"

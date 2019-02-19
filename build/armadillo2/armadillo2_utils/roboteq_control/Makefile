@@ -56,6 +56,16 @@ CMAKE_BINARY_DIR = /home/zeged/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -79,17 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -112,6 +111,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -122,16 +132,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,96 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule
-
-# Convenience name for target.
-_roboteq_control_generate_messages_check_deps_ControlStatus: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule
-
-.PHONY : _roboteq_control_generate_messages_check_deps_ControlStatus
-
-# fast build rule for target.
-_roboteq_control_generate_messages_check_deps_ControlStatus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/build
-.PHONY : _roboteq_control_generate_messages_check_deps_ControlStatus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule
-
-# Convenience name for target.
-_roboteq_control_generate_messages_check_deps_MotorStatus: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule
-
-.PHONY : _roboteq_control_generate_messages_check_deps_MotorStatus
-
-# fast build rule for target.
-_roboteq_control_generate_messages_check_deps_MotorStatus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/build
-.PHONY : _roboteq_control_generate_messages_check_deps_MotorStatus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule
-
-# Convenience name for target.
-roboteq_control_generate_messages: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule
-
-.PHONY : roboteq_control_generate_messages
-
-# fast build rule for target.
-roboteq_control_generate_messages/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/build
-.PHONY : roboteq_control_generate_messages/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule
-
-# Convenience name for target.
-roboteq_control_gennodejs: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule
-
-.PHONY : roboteq_control_gennodejs
-
-# fast build rule for target.
-roboteq_control_gennodejs/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/build
-.PHONY : roboteq_control_gennodejs/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_eus.dir/rule:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_eus.dir/rule
 .PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_eus.dir/rule
@@ -269,96 +179,6 @@ roboteq_control_generate_messages_eus: armadillo2/armadillo2_utils/roboteq_contr
 roboteq_control_generate_messages_eus/fast:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_eus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_eus.dir/build
 .PHONY : roboteq_control_generate_messages_eus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule
-
-# Convenience name for target.
-roboteq_control_gencfg: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule
-
-.PHONY : roboteq_control_gencfg
-
-# fast build rule for target.
-roboteq_control_gencfg/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/build
-.PHONY : roboteq_control_gencfg/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_eus: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_eus
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_eus/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
-.PHONY : diagnostic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule
-
-# Convenience name for target.
-_roboteq_control_generate_messages_check_deps_Peripheral: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule
-
-.PHONY : _roboteq_control_generate_messages_check_deps_Peripheral
-
-# fast build rule for target.
-_roboteq_control_generate_messages_check_deps_Peripheral/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/build
-.PHONY : _roboteq_control_generate_messages_check_deps_Peripheral/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roboteq_control_generate_messages_py: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule
-
-.PHONY : roboteq_control_generate_messages_py
-
-# fast build rule for target.
-roboteq_control_generate_messages_py/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/build
-.PHONY : roboteq_control_generate_messages_py/fast
-
-# Convenience name for target.
-armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_nodejs: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_nodejs/fast:
-	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
-.PHONY : diagnostic_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencpp.dir/rule:
@@ -376,6 +196,51 @@ roboteq_control_gencpp/fast:
 .PHONY : roboteq_control_gencpp/fast
 
 # Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule
+
+# Convenience name for target.
+_roboteq_control_generate_messages_check_deps_MotorStatus: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/rule
+
+.PHONY : _roboteq_control_generate_messages_check_deps_MotorStatus
+
+# fast build rule for target.
+_roboteq_control_generate_messages_check_deps_MotorStatus/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_MotorStatus.dir/build
+.PHONY : _roboteq_control_generate_messages_check_deps_MotorStatus/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule
+
+# Convenience name for target.
+roboteq_control_gencfg: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/rule
+
+.PHONY : roboteq_control_gencfg
+
+# fast build rule for target.
+roboteq_control_gencfg/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gencfg.dir/build
+.PHONY : roboteq_control_gencfg/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule
+
+# Convenience name for target.
+_roboteq_control_generate_messages_check_deps_ControlStatus: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/rule
+
+.PHONY : _roboteq_control_generate_messages_check_deps_ControlStatus
+
+# fast build rule for target.
+_roboteq_control_generate_messages_check_deps_ControlStatus/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_ControlStatus.dir/build
+.PHONY : _roboteq_control_generate_messages_check_deps_ControlStatus/fast
+
+# Convenience name for target.
 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_geneus.dir/rule:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_geneus.dir/rule
 .PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_geneus.dir/rule
@@ -389,6 +254,36 @@ roboteq_control_geneus: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/r
 roboteq_control_geneus/fast:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_geneus.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_geneus.dir/build
 .PHONY : roboteq_control_geneus/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule
+
+# Convenience name for target.
+roboteq_control_generate_messages: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/rule
+
+.PHONY : roboteq_control_generate_messages
+
+# fast build rule for target.
+roboteq_control_generate_messages/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages.dir/build
+.PHONY : roboteq_control_generate_messages/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule
+
+# Convenience name for target.
+roboteq_control_gennodejs: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/rule
+
+.PHONY : roboteq_control_gennodejs
+
+# fast build rule for target.
+roboteq_control_gennodejs/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_gennodejs.dir/build
+.PHONY : roboteq_control_gennodejs/fast
 
 # Convenience name for target.
 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_nodejs.dir/rule:
@@ -434,6 +329,36 @@ roboteq_control_genlisp: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/
 roboteq_control_genlisp/fast:
 	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_genlisp.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_genlisp.dir/build
 .PHONY : roboteq_control_genlisp/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule
+
+# Convenience name for target.
+_roboteq_control_generate_messages_check_deps_Peripheral: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/rule
+
+.PHONY : _roboteq_control_generate_messages_check_deps_Peripheral
+
+# fast build rule for target.
+_roboteq_control_generate_messages_check_deps_Peripheral/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/_roboteq_control_generate_messages_check_deps_Peripheral.dir/build
+.PHONY : _roboteq_control_generate_messages_check_deps_Peripheral/fast
+
+# Convenience name for target.
+armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule
+.PHONY : armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roboteq_control_generate_messages_py: armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/rule
+
+.PHONY : roboteq_control_generate_messages_py
+
+# fast build rule for target.
+roboteq_control_generate_messages_py/fast:
+	cd /home/zeged/catkin_ws/build && $(MAKE) -f armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/build.make armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_py.dir/build
+.PHONY : roboteq_control_generate_messages_py/fast
 
 # Convenience name for target.
 armadillo2/armadillo2_utils/roboteq_control/CMakeFiles/roboteq_control_generate_messages_cpp.dir/rule:
@@ -717,35 +642,30 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... _roboteq_control_generate_messages_check_deps_ControlStatus"
-	@echo "... _roboteq_control_generate_messages_check_deps_MotorStatus"
-	@echo "... roboteq_control_generate_messages"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... roboteq_control_gennodejs"
-	@echo "... test"
-	@echo "... diagnostic_msgs_generate_messages_py"
-	@echo "... roboteq_control_generate_messages_eus"
-	@echo "... roboteq_control_gencfg"
-	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... list_install_components"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
-	@echo "... _roboteq_control_generate_messages_check_deps_Peripheral"
-	@echo "... roboteq_control_generate_messages_py"
-	@echo "... diagnostic_msgs_generate_messages_nodejs"
+	@echo "... install"
+	@echo "... roboteq_control_generate_messages_eus"
 	@echo "... roboteq_control_gencpp"
+	@echo "... _roboteq_control_generate_messages_check_deps_MotorStatus"
+	@echo "... roboteq_control_gencfg"
+	@echo "... _roboteq_control_generate_messages_check_deps_ControlStatus"
+	@echo "... rebuild_cache"
 	@echo "... roboteq_control_geneus"
+	@echo "... roboteq_control_generate_messages"
+	@echo "... roboteq_control_gennodejs"
 	@echo "... roboteq_control_generate_messages_nodejs"
 	@echo "... roboteq_control_generate_messages_lisp"
+	@echo "... install/local"
 	@echo "... roboteq_control_genlisp"
+	@echo "... _roboteq_control_generate_messages_check_deps_Peripheral"
+	@echo "... roboteq_control_generate_messages_py"
+	@echo "... install/strip"
 	@echo "... roboteq_control_generate_messages_cpp"
 	@echo "... _roboteq_control_generate_messages_check_deps_Service"
 	@echo "... roboteq_control_genpy"
 	@echo "... roboteq_control"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... src/configurator/gpio_analog.o"
 	@echo "... src/configurator/gpio_analog.i"
 	@echo "... src/configurator/gpio_analog.s"
