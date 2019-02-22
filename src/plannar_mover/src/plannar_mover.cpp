@@ -32,7 +32,7 @@ namespace gazebo
       this->old_secs =ros::Time::now().toSec();
       
       // Create a topic name
-      std::string plannar_pos_topicName = "/cmd_vel";
+      std::string plannar_pos_topicName = "/object_cmd_vel";
 
       // Initialize ros, if it has not already bee initialized.
       if (!ros::isInitialized())
