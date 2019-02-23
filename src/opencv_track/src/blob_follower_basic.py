@@ -14,20 +14,29 @@ print cv2.__version__
 import numpy as np
 from cv_bridge import CvBridge, CvBridgeError
 from geometry_msgs.msg import Twist
-from sensor_msgs.msg import Image, LaserScan
+from sensor_msgs.msg import Image, LaserScan, CameraInfo
+from image_geometry import PinholeCameraModel
+import tf
+import image_geometry
+
 
 last_value = 0.0
 laser_values = np.full(360, np.inf)
+
+
 
 class LineFollower(object):
 	def __init__(self):
 
 		self.bridge_object = CvBridge()
-		self.image = rospy.Subscriber("/tb3_0/camera/rgb/image_raw",Image,self.camera_callback)
+		self.image = rospy.Subscriber("/camera/rgb/image_raw",Image,self.camera_callback)
 
 	def camera_callback(self,data):
 
 		try:
+			cam_info = rospy.wait_for_message("/camera/rgb/camera_info", CameraInfo, timeout=None)
+			img_proc = PinholeCameraModel()
+			img_proc.fromCameraInfo(cam_info)
 			# We select bgr8 because its the OpenCV encoding by default
 			cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
 
@@ -91,7 +100,11 @@ class LineFollower(object):
 			#print 'left', left, 'mid', mid, 'right', right, ' ang', ang
 
 			if target_found:
-	
+				n = img_proc.projectPixelTo3dRay((cx,cy))
+				print 'n:',n
+				br = tf.TransformBroadcaster()
+				br.sendTransform((2.0, 0.0, 0.0),(0.0, 0.0, 0.0, 1.0),rospy.Time.now(),"carrot1","base_link")
+
 				if mid<1.5:
 					#drive(mid - keep_distance ,ang)
 					vel = mid - keep_distance
@@ -117,6 +130,7 @@ class LineFollower(object):
 				ang+=ang+1
 				
 			last_value = cx
+			vel=0
 			drive(vel,-ang)
 
 			#print 'height', height, ' width', width, ' cx:',cx
@@ -132,7 +146,7 @@ class LineFollower(object):
 		cv2.imshow("Masked", res)
 		cv2.waitKey(1)
 
-pub_ = rospy.Publisher('/tb3_0/cmd_vel', Twist, queue_size=50)
+pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=50)
 def main():
 
 	rospy.init_node('line_following_node', anonymous=True)
